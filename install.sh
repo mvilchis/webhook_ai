@@ -28,6 +28,7 @@ find ./ -type f -exec sed -i -e "s/-dummy/-${PROJECT_NAME}/g" {} \;
 echo ${PROJECT_NAME} > .project-name
 
 git add .project-name ./kubernetes
+git checkout install.sh
 
 git commit -m "Ajustando el nombre del proyecto a ${PROJECT_NAME}"
 
