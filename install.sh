@@ -30,11 +30,11 @@ echo ${PROJECT_NAME} > .project-name
 git add .project-name ./kubernetes
 
 git commit -m "Ajustando el nombre del proyecto a ${PROJECT_NAME}"
-git checkout install.sh
-git commit -m "revert install changes"
+
 echo "############################################################################################"
 echo "##                                                                                        ##"
 echo "##  No olvides modificar los archivos utils y webhook con el codigo correspondiente       ##"
+echo "##  Ejecuta git checkout install.sh para revertir los cambios en install.sh               ##"
 echo "##                                                                                        ##"
 echo "############################################################################################"
 
