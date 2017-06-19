@@ -18,7 +18,7 @@ git pull template master
 
 ########## CHANGE KUBERNETES FILE  ##########
 
-find ./kubernetes -type f -exec sed -i -e "s/-temporal/-${PROJECT_NAME}/g" {} \;
+find ./kubernetes -type f -exec sed -i -e "s/-dummy/-${PROJECT_NAME}/g" {} \;
 mv kubernetes/webhook_deployment.yaml  kubernetes/webhook_${PROJECT_NAME}_deployment.yaml
 mv kubernetes/webhook_service.yaml  kubernetes/webhook_${PROJECT_NAME}_service.yaml
 
