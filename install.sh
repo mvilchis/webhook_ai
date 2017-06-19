@@ -20,17 +20,12 @@ git pull template master
 
 echo ${PROJECT_NAME} > .project-name
 
-hub create ${USERNAME}/${PROJECT_NAME}
+sed "%s/-dummy/-${PROJECT_NAME}/g"
 
 git add .project-name
 
 git commit -m "Ajustando el nombre del proyecto a ${PROJECT_NAME}"
 
-git push origin master
-
-git flow init -d
-
-git checkout develop
 
 make help
 
