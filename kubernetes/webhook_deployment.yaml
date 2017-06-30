@@ -1,24 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: webhook-dummy
+    name: webhook-dummy
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: webhook-dummy
-    template:
-      metadata:
-        labels:
-          app: webhook-dummy
-      spec:
-        containers:
-          - name: webhook-dummy
-            image: mvilchis/image-dummy
-            imagePullPolicy: Always
-            env:
-              - name: WEBHOOK_PORT
-                value: '5000'
-            ports:
-              - containerPort: 5000
-            resources: {}
+   replicas: 1
+   selector:
+     matchLabels:
+       app: webhook-dummy
+   template:
+     metadata:
+       labels:
+         app: webhook-dummy
+     spec:
+       containers:
+         - name: webhook-dummy
+           image: mvilchis/imagenACambiar
+           imagePullPolicy: Always
+           env:
+             - name: WEBHOOK_PORT
+               value: '5000'
+           ports:
+             - containerPort: 5000
+           resources: {}

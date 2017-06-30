@@ -4,8 +4,8 @@ metadata:
   name: webhook-dummy
 spec:
   ports:
-    - port: 5000
-      targetPort: 5000
-      protocol: TCP
-    selector:
-      app: webhook-dummy
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: webhook-dummy
