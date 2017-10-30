@@ -6,26 +6,15 @@ import ast
 from flask import jsonify
 app = FlaskAPI(__name__)
 
-@app.route("/<variable_name>", methods=['GET', 'POST'])
-def get_nearest_bansefi(variable_name = "fecha"):
+@app.route("/", methods=['GET', 'POST'])
+def get_class():
     """
     List or create notes.
     """
-    if request.method == 'POST':
-        request_dic = request.form.to_dict()
-        #Obtain values list of rapidpro post
-        values_dic = request_dic['values']
-        #Response of rapidpro is a dictionary, but parse to dict is a problem
-        #because contains quotes, so, we search by indexof variable_name
-        to_parse= values_dic[:values_dic.rfind(variable_name)].split("text")[-1]
-        to_parse = to_parse.split(":")[1]
-        to_parse = to_parse.split(",")[0]
-        to_parse = re.sub(r'"','',to_parse).strip()
-        ################ CALL OF UTIL FUNCTION ################
-        #response_value= call_function(to_parse)
-
-
-        return jsonify({variable_name:response_value})
+    if request.method == 'GET':
+        phrase = str(request.args.get('phrase'))
+        return jsonify({"class": "1", "get": phrase})
+      
 
 if __name__ == "__main__":
     app.config['TEMPLATES_AUTO_RELOAD'] = True
