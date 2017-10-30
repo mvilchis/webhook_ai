@@ -1,19 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-    name: webhook-dummy
+    name: webhook-webhook_ia
 spec:
    replicas: 1
    selector:
      matchLabels:
-       app: webhook-dummy
+       app: webhook-webhook_ia
    template:
      metadata:
        labels:
-         app: webhook-dummy
+         app: webhook-webhook_ia
      spec:
        containers:
-         - name: webhook-dummy
+         - name: webhook-webhook_ia
            image: mvilchis/imagenACambiar
            imagePullPolicy: Always
            env:
