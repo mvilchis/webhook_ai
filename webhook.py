@@ -12,8 +12,9 @@ def get_class():
     List or create notes.
     """
     if request.method == 'GET':
-        phrase = str(request.args.get('phrase'))
-        return jsonify({"class": "1", "get": phrase})
+        descripcion = str(request.args.get('descripcion'))
+        importancia = str(request.args.get('importancia')) 
+        return jsonify({"class": "1", "get": descripcion})
       
 
 if __name__ == "__main__":
